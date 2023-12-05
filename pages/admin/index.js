@@ -46,24 +46,24 @@ export default function AdminPanel() {
   // Подобные функции для handleUpdateModification и handleDeleteModification
 
   return (
-    <div>
-      <div>
-        <input
-          value={newWord}
-          onChange={(e) => setNewWord(e.target.value)}
-          placeholder="Новое слово"
-        />
-        <input
-          value={newAlternatives}
-          onChange={(e) => setNewAlternatives(e.target.value)}
-          placeholder="Альтернативы (через запятую)"
-        />
-        <button onClick={handleAddModification}>Добавить</button>
+    <div className="modify-text-container">
+      <h1>Uncensor it</h1>
+      <div className="input-result-container">
+        <form onSubmit={handleSubmit} className="modify-text-form">
+          <textarea
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            placeholder="START TYPING HERE..."
+          />
+          {modifiedText && (
+            <div className="modified-text-result">
+              <strong>Transformed:</strong> <span>{modifiedText}</span>
+            </div>
+          )}
+        </form>
       </div>
-      {error && <p>{error}</p>}
-      <table>
-        {/* Отобразите здесь список модификаций */}
-      </table>
+      <button type="submit" form="text-form" className="button">PRESS TO UNCENSOR IT</button>
     </div>
   );
+  
 }

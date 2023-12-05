@@ -19,16 +19,28 @@ export default function ModifyText() {
 
   return (
     <div className="modify-text-container">
-      <h1>Uncesore it</h1>
-      <form onSubmit={handleSubmit} className="modify-text-form">
+      <h1>Uncensor it</h1>
+      <div className="input-result-container">
         <textarea
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Enter your text"
+          placeholder="START TYPING HERE..."
+          className="textarea"
         />
-        <button type="submit" className="button">Modify text</button>
-      </form>
-      {modifiedText && <div className="modified-text-result"><strong>Transformed:</strong> {modifiedText}</div>}
+        {modifiedText && (
+          <div className="modified-text-result">
+            <span>{modifiedText}</span>
+          </div>
+        )}
+      </div>
+      <button 
+        onClick={handleSubmit} 
+        className="button"
+      >
+        PRESS TO UNCENSOR IT
+      </button>
     </div>
   );
+  
+  
 }

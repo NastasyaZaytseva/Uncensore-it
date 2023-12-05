@@ -1,22 +1,21 @@
 @font-face {
-  font-family: "Formular";
-  src: url("../public/fonts/Formular-Light.woff") format("woff"),
-       url("../public/fonts/Formular-Medium.ttf") format("truetype");
+  font-family: "TAN";
+  src: url("../public/fonts/TAN-ASTORIA-Display.woff") format("woff"),
+       url("../public/fonts/TAN-ASTORIA-Display.ttf") format("truetype"),
+       url("../public/fonts/formular-regular-trial.otf") format("truetype");
+
+
 }
 
 
 
-:root {
-  --color-primary: #4262FF;
-  --color-text: #050038;
-  --color-stroke: #9B99AF;
-  --color-section: #FFD02F;
-  --color-white: #FFF;
-  --color-hover: rgba(5, 0, 56, 0.60);
-  --color-hover-but: #3253f9;
-  --color-hover-ghost: #d2d9ff;
-  --color-pale: #F1F3FD;
-  --border-24: 24px;
 
+
+
+body {
+  background:  #0f1bbb;
+  height: 100%;
 }
+
+
 
