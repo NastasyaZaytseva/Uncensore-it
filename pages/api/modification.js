@@ -12,20 +12,32 @@ export default function handler(req, res) {
 }
 
 function modifyText(inputText) {
-  const wordsArr = wordsToReplace["Words"];
+  const wordsArr = new Set(wordsToReplace["Words"]);
 
-  const inputWords = inputText.split(/\s+/);
+  const modifiedWords = inputText.split(/\s+/).map(word => {
+    const normalizedWord = normalizeWord(word);
 
-  const modifiedWords = inputWords.map(word => {
-    if (wordsArr.includes(word.toLowerCase())) {
-      const modifiedWord = word.split('').map(char => symbols[char.toLowerCase()].getRandomElement() || char).join('');
-      return modifiedWord.slice(0, -2) + word.slice(-2); // Replace (length - 2) characters
+    if (wordsArr.has(normalizedWord)) {
+      const modifiedWord = Array.from(word, char => {
+        const symbolMapping = symbols[char.toLowerCase()];
+        return symbolMapping !== undefined && symbolMapping !== null ? getRandomElement(symbolMapping) : char;
+      }).join('').slice(0, -2) + word.slice(-2); // Replace (length - 2) characters
+
+      return modifiedWord;
     } else {
       return word;
     }
   });
 
-  const modifiedText = modifiedWords.join(' ');
+  return modifiedWords.join(' ');
+}
 
-  return modifiedText;
+function getRandomElement(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+function normalizeWord(word) {
+  // Remove trailing punctuation and make it lowercase
+  return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase();
 }
