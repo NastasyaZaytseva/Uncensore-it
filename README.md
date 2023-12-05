@@ -21,6 +21,8 @@ Steps to install and set up the project:
 Navigate to the project directory
 
 cd 
+
+
 Install necessary dependencies
 
 npm install
