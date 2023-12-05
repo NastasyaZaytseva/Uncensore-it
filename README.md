@@ -17,7 +17,7 @@ Steps to install and set up the project:
 
 1. Clone the repository
    ```bash
-   git clone https://your-repository-url.com
+   git clone https://github.com/NastasyaZaytseva/Uncesore-it.git
 Navigate to the project directory
 
 cd 
