@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     color: white;
     padding: 20px;
+    flex-grow: 1; /* This will make it fill the available space */
   }
   
   h1 {
@@ -22,17 +22,15 @@
   
   .textarea, .modified-text-result {
     font-family: Arial, Helvetica, sans-serif;
-    width: 30vh;
-    height: 30vh;
+    width: 30vh; /* Adjust size as necessary */
+    height: 30vh; /* Adjust size as necessary */
     border: 2px solid white;
     background: transparent;
     color: white;
     font-size: 1rem;
     padding: 1rem;
-    margin: 1em;
   }
   
-
   .button {
     background-color: #4166c1;
     color: #FFFFFF;

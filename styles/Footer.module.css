@@ -1,0 +1,11 @@
+.footer {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+   color: #ffffff;
+   font-family: 'Tan', sans-serif;
+   padding: 20px;
+  }
+  
