@@ -9,6 +9,7 @@ export default function ModifyText() {
   return (
     <div className="modify-text-container">
       <h1>UNCENSOR IT</h1>
+      <p className='description'>Sidestep shadow bans on social media. Regenerate your caption to avoid triggering censorship algorithms in the context of sexual health.</p>
       <div className="input-container">
         <textarea
           value={inputText}
