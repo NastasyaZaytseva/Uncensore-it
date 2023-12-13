@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #e5e2df;
     padding: 20px;
-    flex-grow: 1; /* This will make it fill the available space */
+    flex-grow: 1; 
   }
   
   h1 {
@@ -14,12 +14,14 @@
     margin-bottom: 5px;
   }
   .description {
-    line-height: 1.5;
-    font-size: 20px;
-    max-width: 64ch;
+    font-family: "Grotesk"; 
+
+    font-size: 24px;
+    line-height: 30px;
+    color: #e5e2df;
+    max-width: 50ch;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 
   }
   .input-container {
@@ -29,19 +31,20 @@
   }
   
   .textarea, .modified-text-result {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 30vh; /* Adjust size as necessary */
-    height: 30vh; /* Adjust size as necessary */
-    border: 2px solid white;
+    font-family: "Grotesk"; 
+    width: 30vh; 
+    height: 30vh;
+    border: 2px solid #e5e2df;
     background: transparent;
-    color: white;
+    color: #e5e2df;
     font-size: 1rem;
     padding: 1rem;
   }
   
   .button {
+    font-family: "Grotesk"; 
     background-color: #4166c1;
-    color: #FFFFFF;
+    color: #e5e2df;
     border: none;
     border-radius: 5px;
     padding: 1rem 2rem;

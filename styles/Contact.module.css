@@ -1,0 +1,16 @@
+.contact {
+    font-family: "Grotesk";
+    color: #e5e2df;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.contact a {
+    font-size: 47px;
+    color: #e3cac7;
+    line-height: 62px;
+}

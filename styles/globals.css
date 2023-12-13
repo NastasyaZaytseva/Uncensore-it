@@ -3,9 +3,16 @@
   src: url("../public/fonts/TAN-ASTORIA-Display.woff") format("woff"),
        url("../public/fonts/TAN-ASTORIA-Display.ttf") format("truetype"),
        url("../public/fonts/formular-regular-trial.otf") format("truetype");
-
-
+  
 }
+
+@font-face {
+  font-family: "Grotesk";
+  src: url("../public/fonts/TestFoundersGrotesk-Regular.otf") format("truetype");
+}
+
+
+
 
 html, body {
   background:  #0f1bbb;
