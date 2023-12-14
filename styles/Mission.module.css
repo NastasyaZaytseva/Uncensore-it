@@ -1,0 +1,27 @@
+.mission {
+    margin: 10px 300px 10px 50px; /* This centers the container in the middle of the page */
+
+    
+
+}
+
+.text {
+    font-family: "Grotesk";
+    font-size: 2em;
+    color: #e4ded6;
+    text-align: left;
+   
+}
+
+.intro {
+    font-family: "Grotesk";
+    font-size: 1.5em;
+    color: #e4ded6;
+    text-align: left;
+
+}
+.intro a {
+    text-decoration: none; /* Removes the underline from the link */
+    color: #000; /* Color for the link */
+    border-bottom: 1px solid #000; /* Adds an underline */
+  }

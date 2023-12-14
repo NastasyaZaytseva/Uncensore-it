@@ -8,11 +8,11 @@ const Header = () => {
       <div className={styles.logoContainer}>
         <Link href="/">
         
-            <Image src="/logo.png" alt="Logo" width={50} height={50} />
+            <Image className={styles.logo} src="/logo.png" alt="Logo" width={50} height={50} />
         
         </Link>
       </div>
-      <nav>
+      <nav className={styles.menu}>
         <Link href="/mission">MISSION</Link>
         <Link href="/contact">CONTACT</Link>
       </nav>
