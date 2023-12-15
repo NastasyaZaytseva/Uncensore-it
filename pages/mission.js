@@ -5,12 +5,15 @@ const Mission = () => {
   return (
     <div className={styles.mission}>
         <p className={styles.intro}>
-        The project, established by Nienke Hedler, has more details available <a href="https://www.nienkehelder.com/">here</a>):
+        Uncensor It, established by Nienke Helder, has more details available <a href="https://www.nienkehelder.com/">here</a>):
     </p>
-      <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis urna cursus eget nunc scelerisque viverra mauris. Justo nec ultrices dui sapien eget mi proin. Justo nec ultrices dui sapien. Morbi tristique senectus et netus et malesuada fames ac. 
-        Nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Mattis molestie a iaculis at.</p>
-        <p className={styles.text}>Sit amet purus gravida quis. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. 
-        Justo donec enim diam vulputate.Porttitor massa id neque aliquam vestibulum morbi blandit cursus.</p>
+      <p className={styles.text}>This project in progress stems from a long term observation that people in the field of sexual health struggle to communicate on social media, because of censorship. While there is an understandable need of profanity filters to keep social media a relatively safe space, this puts a big responsibility on social media platforms, which in their turn come with many ethical questions. 
+
+
+</p>
+        <p className={styles.text}>Because censorship seems to disproportionately affect activism for equality and socially vulnerable groups, we are aiming to design our app based on intersectional methodologies and philosophies such as consent based technology.</p>
+
+        <p className={styles.text}>Our first goal is to create a working prototype for the sexual health community, so that they can share their important knowledge without the risk of losing their viewers or full accounts. </p>
    
     </div>
   );

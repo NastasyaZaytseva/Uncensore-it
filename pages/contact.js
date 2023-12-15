@@ -4,13 +4,11 @@ import styles from '../styles/Contact.module.css';
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <p> For Inquiries:</p>
+      <p> Do you have input for us in the mean time?<br></br> Feel free to reach out via:</p>
       <h2>
       <a href="mailto:info@un-censor.it?subject=Inquiry%20from%20studiobramble.com">info@un-censor.it</a>
-      <br></br>
-            <a href="tel:+11111111">+1 212 232 2121</a></h2>
-      <div>
-       <p> Noord-Holland 1071 GZ, Netherlands</p> </div>
+     </h2>
+
     </div>
   );
 };
