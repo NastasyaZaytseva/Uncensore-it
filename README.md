@@ -1,7 +1,7 @@
-# Uncesore It
+# Uncensore It
 
 Project Description:
-Uncesore It is a web application built with Next.js, allowing users to modify text by replacing specific words with alternative variants.
+Uncensore It is a web application built with Next.js, allowing users to modify text by replacing specific words with alternative variants.
 
 ## Getting Started
 
