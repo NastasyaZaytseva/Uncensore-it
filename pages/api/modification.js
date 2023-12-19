@@ -1,11 +1,20 @@
 import wordsToReplace from '../api/words-to-replace.json';
 import symbols from '../api/symbols-for-replacement.json';
+import getAssesment from './openAIModeration.js';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { text } = req.body;
     const modifiedText = modifyText(text);
+
+    try {
+      await getAssesment(modifiedText);
+    } catch (error) {
+      console.error('Error in getAssesment:', error);
+    }
+    
     res.status(200).json({ modifiedText });
+
   } else {
     res.status(405).end();
   }
@@ -27,7 +36,7 @@ function modifyText(inputText) {
       const finalWord = shouldModifyOriginal
         ? word.slice(0, -randomSliceSize) + modifiedWord.slice(-randomSliceSize)
         : modifiedWord.slice(0, -randomSliceSize) + word.slice(-randomSliceSize);
-
+        
       return finalWord;
     } else {
       return word;
