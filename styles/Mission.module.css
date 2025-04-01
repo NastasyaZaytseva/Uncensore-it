@@ -1,27 +1,107 @@
 .mission {
-    margin: 10px 300px 10px 50px; /* This centers the container in the middle of the page */
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px 40px 20px 40px;
+}
 
-    
-
+.content {
+    max-width: 800px;
+    width: 100%;
+    position: relative;
 }
 
 .text {
     font-family: "Grotesk";
-    font-size: 2em;
-    color: #e4ded6;
+    font-size: 3.5em;
+    color: #e5e2df;
     text-align: left;
-   
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 500;
 }
 
 .intro {
     font-family: "Grotesk";
     font-size: 1.5em;
-    color: #e4ded6;
+    color: #e5e2df;
     text-align: left;
-
+    margin-bottom: 1em;
+    line-height: 1.5;
+    max-width: 90%;
 }
+
+.intro:last-child {
+    margin-bottom: 0;
+}
+
 .intro a {
-    text-decoration: none; /* Removes the underline from the link */
-    color: #000; /* Color for the link */
-    border-bottom: 1px solid #000; /* Adds an underline */
-  }
+    text-decoration: none;
+    color: #e5e2df;
+    border-bottom: 1px solid #e5e2df;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.intro a:hover {
+    border-color: transparent;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .mission {
+        padding: 50px 30px 20px 30px;
+    }
+
+    .text {
+        font-size: 3em;
+        margin-bottom: 0.7em;
+    }
+
+    .intro {
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .mission {
+        padding: 40px 25px 20px 25px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .text {
+        font-size: 2.5em;
+        margin-bottom: 0.6em;
+    }
+
+    .intro {
+        font-size: 1.25em;
+        margin-bottom: 0.8em;
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .mission {
+        padding: 30px 20px 15px 20px;
+    }
+
+    .text {
+        font-size: 2em;
+        line-height: 1.15;
+    }
+
+    .intro {
+        font-size: 1.1em;
+        line-height: 1.4;
+        margin-bottom: 0.8em;
+    }
+}
