@@ -10,8 +10,10 @@
   }
   
   h1 {
+    font-family: 'Tan', sans-serif;
     font-size: 3rem;
     margin-bottom: 5px;
+    color: #ffffff;
   }
   .description {
     font-family: "Grotesk"; 
@@ -57,3 +59,257 @@
     background-color: #cccccc;
   }
   
+  .translator-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+ 
+  }
+
+  .description {
+    color: #666;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .translator-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .input-box, .output-box {
+font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    padding: 20px;
+    min-height: 150px;
+  }
+
+  .text-area {
+    width: 100%;
+    height: 150px;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    padding: 0;
+  }
+
+  .text-area:focus {
+    outline: none;
+  }
+
+  .clear-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+
+  .clear-button:hover {
+    background: #f0f0f0;
+  }
+
+  .translate-button {
+    width: 100%;
+    padding: 15px;
+    background: #007AFF;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .translate-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  .button-icon {
+    font-size: 1.2rem;
+  }
+
+  .output-box {
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+  }
+
+  .modified-text {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .placeholder-text {
+    color: #999;
+    font-style: italic;
+  }
+
+  .copy-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #eee;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .copy-button:hover {
+    background: #e0e0e0;
+  }
+
+  @media (max-width: 900px) {
+    .translator-container {
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    .input-box, .output-box {
+      padding: 15px;
+      min-height: 120px;
+    }
+
+    .text-area {
+      height: 120px;
+      font-size: 0.9rem;
+    }
+  }
+
+
+  .translator-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Grotesk", sans-serif;
+    padding: 20px;
+    background: transparent;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    font-size: 22px;
+    color: #e5e2df;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    color: #e5e2df;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+  }
+
+  .nav-links a:hover {
+    opacity: 0.8;
+  }
+
+  .content-section {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #e5e2df;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e5e2df;
+    margin: 0;
+  }
+
+  .translator-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+    margin: 0 20px;
+  }
+
+  @media (max-width: 600px) {
+    .main-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .translator-box {
+      margin: 0 15px;
+    }
+  }
