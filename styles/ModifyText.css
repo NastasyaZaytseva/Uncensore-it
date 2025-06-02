@@ -91,7 +91,7 @@
   }
 
   .input-box, .output-box {
-font-family: 'Courier New', Courier, monospace;
+    font-family: "Grotesk";
     position: relative;
     padding: 20px;
     min-height: 150px;
@@ -173,7 +173,7 @@ font-family: 'Courier New', Courier, monospace;
   .copy-button {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 40px;
     background: #eee;
     border: none;
     padding: 8px 16px;
