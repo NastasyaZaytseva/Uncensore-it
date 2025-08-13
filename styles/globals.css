@@ -1,24 +1,16 @@
-@font-face {
-  font-family: "TAN";
-  src: url("../public/fonts/TAN-ASTORIA-Display.woff") format("woff"),
-       url("../public/fonts/TAN-ASTORIA-Display.ttf") format("truetype"),
-       url("../public/fonts/formular-regular-trial.otf") format("truetype");
-  
-}
-
-@font-face {
-  font-family: "Grotesk";
-  src: url("../public/fonts/TestFoundersGrotesk-Regular.otf") format("truetype");
-}
+/* Using Inter globally via _app.js link; remove custom font-face declarations */
 
 
 
 
 html, body {
-  background:  #0f1bbb;
+  background: #ffffff;
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #111111;
 }
 
 

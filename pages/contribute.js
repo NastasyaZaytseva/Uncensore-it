@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Contribute() {
   const [formData, setFormData] = useState({
@@ -73,12 +74,12 @@ export default function Contribute() {
           {/* Navigation */}
           <nav className="px-6 py-8">
             <div className="max-w-7xl mx-auto">
-              <a 
-                href="/" 
+              <Link
+                href="/"
                 className="inline-flex items-center text-slate-600 hover:text-slate-900 transition-colors duration-200 group"
               >
                 <span className="font-medium">← Back to Text Changer</span>
-              </a>
+              </Link>
             </div>
             <br />
           </nav>
@@ -215,7 +216,7 @@ export default function Contribute() {
                         placeholder="your.email@example.com"
                       />
                       <p className="mt-3 text-sm text-slate-500">
-                        We'll only use this to ask clarifying questions about your suggestion.
+                        We&apos;ll only use this to ask clarifying questions about your suggestion.
                       </p>
                     </div>
                   </section>
@@ -236,7 +237,7 @@ export default function Contribute() {
                     {submitStatus === 'success' && (
                       <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
                         <p className="text-green-800 font-medium">
-                          ✓ Thank you for your contribution! We'll review your suggestion.
+                          ✓ Thank you for your contribution! We&apos;ll review your suggestion.
                         </p>
                       </div>
                     )}
@@ -266,7 +267,7 @@ export default function Contribute() {
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-slate-600 leading-relaxed">Focus on terms related to health, identity, and education that shouldn't be censored</p>
+                      <p className="text-slate-600 leading-relaxed">Focus on terms related to health, identity, and education that shouldn&apos;t be censored</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -295,11 +296,11 @@ export default function Contribute() {
 
         <style jsx>{`
           h1, h2, h3 {
-            font-family: 'TAN', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           }
 
           body, p, label, input, textarea, select, button, li, span {
-            font-family: 'Grotesk', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           }
 
           .form-group {

@@ -13,7 +13,7 @@
 }
 
 .text {
-    font-family: "Grotesk";
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 3.5em;
     color: #e5e2df;
     text-align: left;
@@ -24,7 +24,7 @@
 }
 
 .intro {
-    font-family: "Grotesk";
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.5em;
     color: #e5e2df;
     text-align: left;
