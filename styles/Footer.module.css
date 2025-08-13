@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px 30px 12px;
+    padding: 16px 12px;
 }
 
 .left {
@@ -49,4 +49,9 @@
 
 .instagramIcon {
     display: block;
+}
+
+@media (max-width: 480px) {
+  .inner { padding: 14px 10px; }
+  .fundingLabel { font-size: 11px; }
 }

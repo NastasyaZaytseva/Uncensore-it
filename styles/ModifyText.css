@@ -104,11 +104,37 @@ h1 {
       'input'
       'output'
       'action';
+    gap: 12px;
   }
   .input-box, .output-box {
     width: 100%;
     max-width: 500px;
-    height: 400px;
+    height: 260px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .translator-box {
+    gap: 10px;
+  }
+  .input-box, .output-box {
+    height: 220px;
+  }
+  .text-area {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .regen-button {
+    top: 4px;
+    right: 4px;
+  }
+  .clear-button {
+    top: 4px;
+    right: 4px;
+  }
+  .copy-cta, .missing-link {
+    bottom: 8px;
   }
 }
 
