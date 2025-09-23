@@ -6,7 +6,7 @@ export default function Mission() {
   return (
     <div className={styles.mission}>
       <div className={styles.content}>
-        <Image src="/un-censorit.png" alt="un-censorit" width={126} height={26} className={styles.logo} />
+        <Image src="/un-censorit.svg" alt="un-censorit" width={126} height={26} className={styles.logo} />
         <p className={styles.intro}>
           Un-censor.it is a tool and an art project.
         </p>
