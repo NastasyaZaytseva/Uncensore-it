@@ -81,7 +81,7 @@ export default function Contribute() {
             </div>
 
             {submitStatus === 'success' && (
-              <div className={styles.statusSuccess}>✓ Thank you! We\'ll review your suggestion.</div>
+              <div className={styles.statusSuccess}>✓ Thank you! We&apos;ll review your suggestion.</div>
             )}
             {submitStatus === 'error' && (
               <div className={styles.statusError}>⚠ There was an error. Please try again.</div>
