@@ -64,8 +64,6 @@
     margin-bottom: 2rem;
   }
 
-  
-
   .description {
     color: #666;
     margin: 0.5rem 0;
@@ -179,9 +177,6 @@
     background: #f0f0f0;
   }
 
-/* removed translate button styles */
-
-/* removed translate button icon */
 
 .output-box {
   background: #F7F7F7;
@@ -214,7 +209,6 @@
   padding: 0;
 }
 
-/* Bottom-right link inside output box */
 .missing-link {
   position: absolute;
   bottom: 12px;
@@ -373,7 +367,6 @@
   flex-direction: column;
 }
 
-/* removed card wrapper */
 
 .pageHeader {
   display: flex;

@@ -16,7 +16,6 @@ export default function ModifyText() {
       console.error('Failed to copy text:', err);
     }
   };
-
   return (
     <div className="modify-text-container">
       <div className="header">
