@@ -6,26 +6,22 @@
   justify-content: center;
   color: #111111;
   background: #ffffff;
-  padding: 24px;
+  padding: 0;
   flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
   
-h1 {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1.2;
-  margin: 0 0 8px;
-  color: #111111;
-}
-.description {
+.header .description {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 14px;
   line-height: 22px;
   color: #444444;
-  max-width: 62ch;
+  max-width: 100%;
   text-align: center;
-  margin: 31px 0 16px;
+  margin: 12px 0 8px;
+  padding: 0;
 }
   .input-container {
     display: flex;
@@ -69,83 +65,109 @@ h1 {
 
   .header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0;
   }
 
-  h1 {
-    font-size: 2rem;
-    margin: 0;
- 
+  .header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
-  .description {
-    color: #666;
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
+  .header .examples-link {
+    font-size: 12px;
+    line-height: 18px;
+    color: #111111;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 8px;
   }
 
 .translator-box {
-  display: grid;
-  grid-template-columns: 500px 500px;
-  grid-template-areas:
-    'input output'
-    'action action';
-  gap: 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
-  max-width: 1100px;
   justify-content: center;
+  align-items: stretch;
   background: transparent;
-}
-
-@media (max-width: 900px) {
-  .translator-box {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'input'
-      'output'
-      'action';
-    gap: 12px;
-  }
-  .input-box, .output-box {
-    width: 100%;
-    max-width: 500px;
-    height: 260px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  .translator-box {
-    gap: 10px;
-  }
-  .input-box, .output-box {
-    height: 220px;
-  }
-  .text-area {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  .regen-button {
-    top: 4px;
-    right: 4px;
-  }
-  .clear-button {
-    top: 4px;
-    right: 4px;
-  }
-  .copy-cta, .missing-link {
-    bottom: 8px;
-  }
+  padding: 0;
 }
 
 .input-box, .output-box {
   position: relative;
-  padding: 12px;
-  width: 500px;
-  height: 400px;
+  padding: 14px;
+  width: 100%;
+  min-height: 110px;
   border: 1px solid #D9D9D9;
-  border-radius: 4px;
+  border-radius: 8px;
   background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tablets and up */
+@media (min-width: 640px) {
+  .translator-box {
+    gap: 20px;
+  }
+  .input-box, .output-box {
+    min-height: 200px;
+    padding: 16px;
+  }
+  
+  .text-area,
+  .modified-text,
+  .placeholder-text {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+@media (min-width: 768px) {
+  .translator-box {
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .input-box, .output-box {
+    min-height: 240px;
+    padding: 18px;
+  }
+  
+  .text-area,
+  .modified-text,
+  .placeholder-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .modified-text,
+  .placeholder-text {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+}
+
+/* Desktop - side by side layout */
+@media (min-width: 1024px) {
+  .translator-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'input output';
+    gap: 32px;
+    max-width: 1100px;
+  }
+  .input-box, .output-box {
+    width: 100%;
+    min-height: 360px;
+    padding: 20px;
+  }
 }
 
 .input-box { grid-area: input; }
@@ -159,9 +181,10 @@ h1 {
   resize: none;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #111111;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .text-area::placeholder {
@@ -169,9 +192,9 @@ h1 {
   color: #D9D9D9;
 }
 
-  .text-area:focus {
-    outline: none;
-  }
+.text-area:focus {
+  outline: none;
+}
 
 .clear-button {
   position: absolute;
@@ -200,14 +223,24 @@ h1 {
 }
 
 .modified-text {
-  margin-bottom: 12px;
-  line-height: 1.6;
+  flex-grow: 1;
+  line-height: 1.5;
   color: #111111;
   white-space: pre-wrap;
+  padding-top: 24px;
+  padding-bottom: 28px;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .placeholder-text {
+  flex-grow: 1;
   color: #D9D9D9;
+  line-height: 1.5;
+  padding-top: 24px;
+  padding-bottom: 28px;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* removed right-side copy button */
@@ -256,35 +289,11 @@ h1 {
 
 /* removed right-side copy button hover */
 
-  @media (max-width: 900px) {
-    .translator-container {
-      padding: 10px;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    .description {
-      font-size: 0.8rem;
-    }
-
-    .input-box, .output-box {
-      padding: 15px;
-      min-height: 120px;
-    }
-
-    .text-area {
-      height: 120px;
-      font-size: 0.9rem;
-    }
-  }
-
-
 .translator-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0;
+  width: 100%;
 }
 
   .main-header {
@@ -329,49 +338,40 @@ h1 {
     margin-bottom: 2rem;
   }
 
-.title {
-  font-size: 24px;
-  margin: 0 0 12px;
-  font-weight: 600;
-  letter-spacing: 0;
-  color: #111111;
-}
-
-.description {
-  font-size: 14px;
-  line-height: 22px;
-  color: #444444;
-  margin: 31px 0 16px;
-}
-
-.translator-box {
-  margin: 0 0;
-}
-
-  @media (max-width: 600px) {
-    .main-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .nav-links {
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      font-size: 18px;
-    }
-
-    .title {
-      font-size: 2rem;
-    }
-
-    .description {
-      font-size: 0.9rem;
-    }
-
-    .translator-box {
-      margin: 0 15px;
-    }
+/* Responsive header and description styles */
+@media (min-width: 640px) {
+  .header {
+    margin-bottom: 28px;
   }
+  
+  .header .description {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 16px 0 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 36px;
+  }
+  
+  .header .description {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 20px 0 16px;
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    margin-bottom: 44px;
+  }
+  
+  .header .description {
+    margin: 24px 0 20px;
+  }
+}
