@@ -1,72 +1,69 @@
-import fs from 'fs';
-import path from 'path';
+import clientPromise from '../../lib/mongodb';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
-      const { suggestedWord, category, reason, recommendation, email } = req.body;
+      const { suggestedWord } = req.body;
 
-      // Validate required fields
-      if (!suggestedWord || !reason) {
-        return res.status(400).json({ error: 'Missing required fields' });
+      // Validate required field
+      if (!suggestedWord || suggestedWord.trim() === '') {
+        return res.status(400).json({ error: 'Word is required' });
       }
+
+      // Connect to MongoDB
+      const client = await clientPromise;
+      const db = client.db(process.env.MONGODB_DB || 'uncensorit');
+      const collection = db.collection('contributions');
 
       // Create contribution object
       const contribution = {
-        id: Date.now().toString(),
-        timestamp: new Date().toISOString(),
-        suggestedWord: suggestedWord.trim(),
-        category: category || 'uncategorized',
-        reason: reason.trim(),
-        recommendation: recommendation?.trim() || '',
-        email: email?.trim() || '',
-        status: 'pending'
+        word: suggestedWord.trim(),
+        timestamp: new Date(),
+        status: 'pending',
+        createdAt: new Date(),
       };
 
-      // Read existing contributions
-      const contributionsPath = path.join(process.cwd(), 'data', 'contributions.json');
-      let contributions = [];
-
-      try {
-        // Create data directory if it doesn't exist
-        const dataDir = path.join(process.cwd(), 'data');
-        if (!fs.existsSync(dataDir)) {
-          fs.mkdirSync(dataDir, { recursive: true });
-        }
-
-        // Read existing contributions if file exists
-        if (fs.existsSync(contributionsPath)) {
-          const fileContent = fs.readFileSync(contributionsPath, 'utf8');
-          contributions = JSON.parse(fileContent);
-        }
-      } catch (error) {
-        console.error('Error reading contributions file:', error);
-        contributions = [];
-      }
-
-      // Add new contribution
-      contributions.push(contribution);
-
-      // Write back to file
-      fs.writeFileSync(contributionsPath, JSON.stringify(contributions, null, 2));
+      // Insert into MongoDB
+      const result = await collection.insertOne(contribution);
 
       // Log the contribution (for development)
-      console.log('New contribution received:', {
-        word: contribution.suggestedWord,
-        category: contribution.category,
-        timestamp: contribution.timestamp
+      console.log('New word suggestion received:', {
+        word: contribution.word,
+        timestamp: contribution.timestamp,
+        id: result.insertedId
       });
 
       res.status(200).json({ 
-        message: 'Contribution submitted successfully',
-        id: contribution.id 
+        message: 'Word suggestion submitted successfully',
+        id: result.insertedId
       });
 
     } catch (error) {
-      console.error('Error processing contribution:', error);
+      console.error('Error processing word suggestion:', error);
+      res.status(500).json({ 
+        error: 'Internal server error',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      });
+    }
+  } else if (req.method === 'GET') {
+    // Optional: Get all contributions (for admin use)
+    try {
+      const client = await clientPromise;
+      const db = client.db(process.env.MONGODB_DB || 'uncensorit');
+      const collection = db.collection('contributions');
+
+      const contributions = await collection
+        .find({})
+        .sort({ timestamp: -1 })
+        .limit(100)
+        .toArray();
+
+      res.status(200).json({ contributions });
+    } catch (error) {
+      console.error('Error fetching contributions:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   } else {
     res.status(405).json({ error: 'Method not allowed' });
   }
-} 
+}
