@@ -19,7 +19,7 @@ export default function Mission() {
           Today, that communication is being restricted.
         </p>
         <p className={styles.intro}>
-          All across social media, founders, brands, content creators and educators are facing systemic, sometimes invisible, censorship. Content about menstruation, anatomy, fertility, pelvic pain, menopause or sexual pleasure is flagged, hidden or removed, often under vague "adult content" policies.
+          All across social media, founders, brands, content creators and educators are facing systemic, sometimes invisible, censorship. Content about menstruation, anatomy, fertility, pelvic pain, menopause or sexual pleasure is flagged, hidden or removed, often under vague &ldquo;adult content&rdquo; policies.
         </p>
         <p className={styles.intro}>
           According to recent surveys, by initiatives such as <a href="https://www.censhership.co.uk/" target="_blank" rel="noopener noreferrer">CensHERship</a>, more than 90% of femtech and sexual wellness brands have had ads removed by major platforms, and 40% have experienced over ten separate censorship incidents. But it&apos;s not just companies, educators and clinicians are affected too.
