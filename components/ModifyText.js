@@ -19,7 +19,6 @@ export default function ModifyText() {
   return (
     <div className="modify-text-container">
       <div className="header">
-        <Image src="/un-censorit.svg" alt="un-censorit" width={126} height={26} />
         <p className="description">
           Sidestep shadow bans on social media.<br />
           Regenerate your caption to avoid triggering censorship algorithms.

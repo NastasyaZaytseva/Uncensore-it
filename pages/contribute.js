@@ -56,7 +56,6 @@ export default function Contribute() {
 
       <div className={styles.centerWrap}>
         <div className={styles.pageHeader}>
-          <Image src="/un-censorit.svg" alt="un-censorit" width={126} height={26} className={styles.logo} />
           <div className={styles.subtitle}>Suggest a missing word</div>
         </div>
         <form onSubmit={handleSubmit} className={styles.form}>

@@ -1,71 +1,92 @@
 .mission {
-
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 24px;
+    padding: 0 40px 80px 40px;
+    background: #ffffff;
 }
 
 .content {
-    max-width: 776px;
+    max-width: 980px;
     width: 100%;
     position: relative;
 }
 
 .text {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 32px;
-  color: #111111;
-  text-align: center;
-  margin-bottom: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  font-weight: 400;
+  font-size: 42px;
+  color: #1a1a1a;
+  text-align: left;
+  margin-bottom: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 16px auto;
+  margin: 0 0 48px 0;
 }
 
 .intro {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 32px;
-  color: #111111;
-  text-align: center;
-  margin-bottom: 16px;
-  line-height: 1.4;
-  max-width: 776px;
+  font-size: 20px;
+  color: #2a2a2a;
+  text-align: left;
+  margin-bottom: 28px;
+  line-height: 1.75;
+  max-width: 980px;
   font-weight: 400;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.intro:first-of-type {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 40px;
 }
 
 .intro:last-child {
     margin-bottom: 0;
+    margin-top: 40px;
 }
 
 .intro a {
-  text-decoration: underline;
-  color: #111111;
+  text-decoration: none;
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .intro a:hover {
-    border-color: transparent;
+    border-bottom: 2px solid #1a1a1a;
+    opacity: 0.7;
 }
 
 /* Tablet Styles */
 @media (max-width: 1024px) {
     .mission {
-        padding: 50px 30px 20px 30px;
+        padding: 0 40px 60px 40px;
     }
 
     .text {
-        font-size: 3em;
-        margin-bottom: 0.7em;
+        font-size: 36px;
+        margin-bottom: 28px;
     }
 
     .intro {
-        font-size: 1.4em;
-        margin-bottom: 1em;
+        font-size: 19px;
+        margin-bottom: 24px;
+    }
+
+    .intro:first-of-type {
+        font-size: 22px;
+        margin-bottom: 36px;
     }
 }
 
@@ -73,7 +94,7 @@
 @media (max-width: 768px) {
     .mission {
         min-height: auto;
-        padding: 16px 14px;
+        padding: 0 24px 40px 24px;
         align-items: flex-start;
         justify-content: center;
     }
@@ -83,32 +104,50 @@
     }
 
     .text {
-        font-size: 22px;
-        margin-bottom: 8px;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        margin-bottom: 32px;
     }
 
     .intro {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 10px;
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 20px;
         max-width: 100%;
+    }
+
+    .intro:first-of-type {
+        font-size: 20px;
+        margin-bottom: 28px;
     }
 }
 
 /* Small Mobile Styles */
 @media (max-width: 480px) {
     .mission {
-        padding: 14px 12px;
+        padding: 0 20px 32px 20px;
     }
 
     .text {
-        font-size: 20px;
+        font-size: 24px;
         line-height: 1.3;
     }
 
+    .logo {
+        margin-bottom: 28px;
+    }
+
     .intro {
-        font-size: 15px;
-        line-height: 1.55;
-        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .intro:first-of-type {
+        font-size: 18px;
+        margin-bottom: 24px;
     }
 }
