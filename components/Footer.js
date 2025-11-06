@@ -41,7 +41,7 @@ const Footer = () => {
               <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
             </svg>
           </a>
-          <Link href="/mission" className={styles.link}>About</Link>
+          <Link href="/about-us" className={styles.link}>About</Link>
         </div>
       </div>
     </footer>
