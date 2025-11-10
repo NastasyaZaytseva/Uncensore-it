@@ -11,6 +11,8 @@ export default function handler(req, res) {
   }
 }
 
+const allSymbols = Object.values(symbols).flat().filter(symbol => symbol !== '');
+
 function modifyText(inputText) {
   let modifiedText = inputText;
   
@@ -19,22 +21,12 @@ function modifyText(inputText) {
   
   // Process each word in the list
   sortedWords.forEach(wordToReplace => {
-    // Create multiple regex patterns to catch different variations
-    const patterns = [
-      // Exact match with word boundaries
-      new RegExp(`\\b${escapeRegex(wordToReplace)}\\b`, 'gi'),
-      // Match without word boundaries for partial words
-      new RegExp(escapeRegex(wordToReplace), 'gi')
-    ];
-    
-    patterns.forEach((pattern, index) => {
-      modifiedText = modifiedText.replace(pattern, (match) => {
-        // Only modify if the match hasn't already been modified (doesn't contain symbols)
-        if (!containsSymbols(match)) {
-          return modifyWord(match);
-        }
-        return match;
-      });
+    const pattern = new RegExp(`\\b${escapeRegex(wordToReplace)}\\b`, 'gi');
+    modifiedText = modifiedText.replace(pattern, (match) => {
+      if (!containsSymbols(match)) {
+        return modifyWord(match);
+      }
+      return match;
     });
   });
   
@@ -47,14 +39,21 @@ function modifyWord(word) {
     return Array.from(word, char => replaceCharWithSymbol(char)).join('');
   }
   
-  const randomSliceSize = getRandomSliceSize(word.length);
+  let randomSliceSize = getRandomSliceSize(word.length);
+  if (randomSliceSize > word.length) {
+    randomSliceSize = word.length;
+  }
   const shouldModifyOriginal = Math.random() < 0.5;
   
   const modifiedWord = Array.from(word, char => replaceCharWithSymbol(char)).join('');
   
-  const finalWord = shouldModifyOriginal
+  let finalWord = shouldModifyOriginal
     ? word.slice(0, -randomSliceSize) + modifiedWord.slice(-randomSliceSize)
     : modifiedWord.slice(0, randomSliceSize) + word.slice(randomSliceSize);
+  
+  if (finalWord === word) {
+    finalWord = modifiedWord;
+  }
   
   return finalWord;
 }
@@ -81,8 +80,6 @@ function escapeRegex(string) {
 }
 
 function containsSymbols(text) {
-  // Check if text contains any of the replacement symbols
-  const allSymbols = Object.values(symbols).flat().filter(symbol => symbol !== '');
   return allSymbols.some(symbol => text.includes(symbol));
 }
 
