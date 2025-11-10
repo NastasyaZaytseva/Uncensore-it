@@ -47,9 +47,13 @@ function modifyWord(word) {
   
   const modifiedWord = Array.from(word, char => replaceCharWithSymbol(char)).join('');
   
-  const finalWord = shouldModifyOriginal
+  let finalWord = shouldModifyOriginal
     ? word.slice(0, -randomSliceSize) + modifiedWord.slice(-randomSliceSize)
     : modifiedWord.slice(0, randomSliceSize) + word.slice(randomSliceSize);
+  
+  if (finalWord === word) {
+    finalWord = modifiedWord;
+  }
   
   return finalWord;
 }
