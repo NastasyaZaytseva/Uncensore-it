@@ -23,6 +23,29 @@ html, body {
   width: 100%;
 }
 
+.bg-main {
+  background-image: url('/bg-main.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-contribute {
+  background-image: url('/bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-about {
+  background-image: url('/about.png');
+  background-size: 50%;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
 .main-content {
   flex-grow: 1;
   display: flex;
